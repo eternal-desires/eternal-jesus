@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "jessemood",
+  "version": "${version}",
+  "name": "jessemood",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/jessemood/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.eternity.jessemood.client.JessemoodClient"
+    ],
+    "main": [
+      "com.eternity.jessemood.Jessemood"
+    ]
+  },
+  "mixins": [
+    "jessemood.mixins.json",
+    {
+      "config": "jessemood.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

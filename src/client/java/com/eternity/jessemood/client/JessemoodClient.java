@@ -17,7 +17,7 @@ public class JessemoodClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         guihandler.init();
-        HudRenderCallback.EVENT.register((DrawContext context, float counter) -> {
+        HudRenderCallback.EVENT.register((DrawContext context, RenderTickCounter counter) -> {
         guihandler.render (context);
     });
     }

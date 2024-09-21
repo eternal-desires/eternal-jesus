@@ -1,3 +1,4 @@
+
 package com.eternity.jessemood.client;
 
 import com.eternity.jessemood.client.mixin.PlayerMixin;
@@ -18,7 +19,7 @@ public class JessemoodClient implements ClientModInitializer {
     public void onInitializeClient() {
         guihandler.init();
         HudRenderCallback.EVENT.register((DrawContext context, RenderTickCounter counter) -> {
-        guihandler.render (context);
-    });
+            guihandler.render (context);
+        });
     }
 }

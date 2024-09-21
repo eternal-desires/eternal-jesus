@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.eternity.jessemood.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_22",
   "mixins": [
   ],
   "injectors": {

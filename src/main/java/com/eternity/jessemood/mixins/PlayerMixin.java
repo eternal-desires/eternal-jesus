@@ -12,8 +12,8 @@ public abstract class PlayerMixin {
 
     @Inject(method = "hurt", at = @At("HEAD"))
     public void onHurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> ci) {
-        System.out.println("Player was hurt!");
-        com.eternity.jessemood.client.guihandler.triggerDisplay(); // Set the display flag
+        // System.out.println("Player was hurt!");
+        // com.eternity.jessemood.client.guihandler.triggerDisplay(); // Set the display flag
         LocalPlayer player = (LocalPlayer) (Object) this;
         if (player.isAlive() && player.getHealth() <= 3 && !player.isCreative()) {
             System.out.println("Player is low on health!");

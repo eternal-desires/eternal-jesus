@@ -39,14 +39,14 @@ public class guihandler {
     }
 
     public static void display() {
-        System.out.println("attempting to display...");
+        // System.out.println("attempting to display...");
         Minecraft mc = Minecraft.getInstance();
         if (mc.level != null && mc.player != null) {
             if (startTime == -1 || System.currentTimeMillis() - startTime > DISPLAY_DURATION * 2) {
                 if (!images.isEmpty()) {
                     image_id = images.get(new Random().nextInt(images.size()));
                 } else {
-                    System.err.println("Error: images list is empty.");
+                    // System.err.println("Error: images list is empty.");
                     return;
                 }
 
@@ -60,7 +60,7 @@ public class guihandler {
 
     public static void playLocalSound(SoundEvent soundEvent, Player player) {
         if (soundEvent == null) {
-            System.err.println("Sound event not present.");
+            // System.err.println("Sound event not present.");
             return;
         }
 
@@ -79,7 +79,7 @@ public class guihandler {
     }
 
     public static void render(GuiGraphics guiGraphics) {
-        System.out.println("attempting to render...");
+        // System.out.println("attempting to render...");
         if (!shouldDisplay || startTime < 0 || Minecraft.getInstance().level == null) {
             return;
         }

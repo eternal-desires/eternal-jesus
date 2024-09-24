@@ -27,7 +27,7 @@ public class JessemoodClient {
     @SubscribeEvent
     public static void onRenderOverlay(RenderGuiOverlayEvent.Post event) {
         // Log every overlay that triggers this event to see what is being called
-        System.out.println("Overlay Render Event: " + event.getOverlay().id().toString());
+        // System.out.println("Overlay Render Event: " + event.getOverlay().id().toString());
 
         // Test with a specific overlay ID or with event conditions as needed
         if (event.getOverlay().id().toString().equals("minecraft:player_health")) {

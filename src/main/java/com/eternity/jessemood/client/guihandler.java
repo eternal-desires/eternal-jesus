@@ -39,7 +39,7 @@ public class guihandler {
     }
 
     public static void display() {
-        System.out.println("attempting to display...");
+        // System.out.println("attempting to display...");
         Minecraft mc = Minecraft.getInstance();
         if (mc.level != null && mc.player != null) {
             if (startTime == -1 || System.currentTimeMillis() - startTime > DISPLAY_DURATION * 2) {
@@ -79,7 +79,7 @@ public class guihandler {
     }
 
     public static void render(GuiGraphics guiGraphics) {
-        System.out.println("attempting to render...");
+        // System.out.println("attempting to render...");
         if (!shouldDisplay || startTime < 0 || Minecraft.getInstance().level == null) {
             return;
         }

@@ -60,7 +60,7 @@ public class guihandler {
 
     public static void playLocalSound(SoundEvent soundEvent, Player player) {
         if (soundEvent == null) {
-            System.err.println("Sound event not present.");
+            // System.err.println("Sound event not present.");
             return;
         }
 

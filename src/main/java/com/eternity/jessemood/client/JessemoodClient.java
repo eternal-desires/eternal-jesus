@@ -19,7 +19,6 @@ public class JessemoodClient {
     }
 
     private static void clientSetup(FMLClientSetupEvent event) {
-        System.out.println("Client setup initiated.");
         guihandler.init();
         MinecraftForge.EVENT_BUS.register(JessemoodClient.class);
     }

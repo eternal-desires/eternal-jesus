@@ -1,7 +1,10 @@
 {
   "jesus_bell": {
     "sounds": [
-      "eternaljesus:jesus_bell"
+      {
+        "name": "eternaljesus:jesus_bell",
+        "stream": false
+      }
     ]
   }
 }

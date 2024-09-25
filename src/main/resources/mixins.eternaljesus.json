@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.eternity.jessemood.mixins",
+  "refmap": "eternaljesus.refmap.json",
+  "mixins": [
+
+  ],
+  "client": ["PlayerMixin"],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

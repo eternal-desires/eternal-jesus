@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 public class guihandler {
-    private static final int NUMBEROFIMAGES=5;
+    private static final int NUMBEROFIMAGES=7;
     private static final int DISPLAY_DURATION = 500;
     private static long startTime = -1; // Time when the image starts displaying
     private static long lastTime = -1;

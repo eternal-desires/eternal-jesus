@@ -3,6 +3,7 @@ package com.eternity.jessemood.client;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -75,7 +76,7 @@ public class guihandler {
         RenderSystem.defaultBlendFunc();
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, opacity);
 
-        context.drawTexture(image_id, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
+        context.drawTexture(RenderLayer::getGuiTextured, image_id, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
 
         RenderSystem.disableBlend();
     }

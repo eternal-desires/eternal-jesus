@@ -1,30 +1,31 @@
 package com.eternity.jessemood.client;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.ColorHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class guihandler {
-    private static final int NUMBEROFIMAGES=5;
+public class GuiHandler {
+    private static final int NUMBER_OF_IMAGES = 7;
     private static final int DISPLAY_DURATION = 500;
     private static long startTime = -1; // Time when the image starts displaying
     private static long lastTime = -1;
     private static Identifier image_id = Identifier.of("eternaljesus", "textures/gui/jesus0.png");
-    private static List<Identifier> images = new ArrayList<Identifier>();
+    private static final List<Identifier> images = new ArrayList<>();
     public static int getRandomNumberUsingNextInt(int min, int max) {
         Random random = new Random();
         return random.nextInt(max - min) + min;
     }
     public static void init() {
-        for (int i = 0; i < NUMBEROFIMAGES; i++) {
+        for (int i = 0; i < NUMBER_OF_IMAGES; i++) {
             images.add(Identifier.of("eternaljesus", "textures/gui/jesus"+i+".png"));
         }
     }
@@ -70,13 +71,12 @@ public class guihandler {
         int screenHeight = client.getWindow().getScaledHeight();
 
         float opacity = 1.0f - (float) elapsedTime / DISPLAY_DURATION;
-        RenderSystem.setShaderTexture(0, image_id);
-        RenderSystem.enableBlend();
-        RenderSystem.defaultBlendFunc();
-        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, opacity);
 
-        context.drawTexture(image_id, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
+        context.drawTexture(RenderPipelines.GUI_TEXTURED, image_id, 0, 0, 0, 0,
+                screenWidth, screenHeight, screenWidth, screenHeight, ColorHelper.withAlpha(opacity, -1));
+    }
 
-        RenderSystem.disableBlend();
+    public static Identifier getImageId() {
+        return image_id;
     }
 }

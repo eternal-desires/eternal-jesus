@@ -1,8 +1,10 @@
 package com.eternity.jessemood.client;
 
-import com.eternity.jessemood.client.mixin.PlayerMixin;
+import com.eternity.jessemood.client.util.MinimumHealthUtil;
+
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.registry.Registries;
@@ -16,9 +18,9 @@ public class JessemoodClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        guihandler.init();
-        HudRenderCallback.EVENT.register((DrawContext context, float counter) -> {
-        guihandler.render (context);
-    });
+        GuiHandler.init();
+        MinimumHealthUtil.createJesusHealth();
+        HudElementRegistry.addFirst(GuiHandler.getImageId(),
+                (DrawContext context, RenderTickCounter counter) -> GuiHandler.render(context));
     }
 }
